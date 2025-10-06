@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/QuestScriptEMF/src-gen" creationIcons="false"
+    editDirectory="/QuestScriptEMF.edit/src-gen" editorDirectory="/QuestScriptEMF.editor/src-gen"
+    modelPluginID="QuestScriptEMF" modelName="QuestScriptEMF" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>questScriptEMF.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="QuestScriptEMF" disposableProviderFactory="true" ecorePackage="questScriptEMF.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="questScriptEMF.ecore#//QuestType">
+      <genEnumLiterals ecoreEnumLiteral="questScriptEMF.ecore#//QuestType/SIDE_QUEST"/>
+      <genEnumLiterals ecoreEnumLiteral="questScriptEMF.ecore#//QuestType/MAIN_STORY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="questScriptEMF.ecore#//RewardType">
+      <genEnumLiterals ecoreEnumLiteral="questScriptEMF.ecore#//RewardType/MONEY"/>
+      <genEnumLiterals ecoreEnumLiteral="questScriptEMF.ecore#//RewardType/ITEM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="questScriptEMF.ecore#//ItemType">
+      <genEnumLiterals ecoreEnumLiteral="questScriptEMF.ecore#//ItemType/WEAPON"/>
+      <genEnumLiterals ecoreEnumLiteral="questScriptEMF.ecore#//ItemType/POTION"/>
+      <genEnumLiterals ecoreEnumLiteral="questScriptEMF.ecore#//ItemType/KEY_ITEM"/>
+    </genEnums>
+    <genClasses ecoreClass="questScriptEMF.ecore#//Item">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Item/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Item/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Item/description"/>
+    </genClasses>
+    <genClasses ecoreClass="questScriptEMF.ecore#//Reward">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Reward/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Reward/xp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Reward/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Reward/moneyAmount"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference questScriptEMF.ecore#//Reward/item"/>
+    </genClasses>
+    <genClasses ecoreClass="questScriptEMF.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Task/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Task/find"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Task/defeat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Task/collect"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference questScriptEMF.ecore#//Task/talkTo"/>
+    </genClasses>
+    <genClasses ecoreClass="questScriptEMF.ecore#//NPC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//NPC/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//NPC/dialog"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference questScriptEMF.ecore#//NPC/location"/>
+    </genClasses>
+    <genClasses ecoreClass="questScriptEMF.ecore#//Quest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Quest/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Quest/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Quest/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference questScriptEMF.ecore#//Quest/reward"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference questScriptEMF.ecore#//Quest/task"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference questScriptEMF.ecore#//Quest/giver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference questScriptEMF.ecore#//Quest/requirement"/>
+    </genClasses>
+    <genClasses ecoreClass="questScriptEMF.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Location/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Location/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Location/y"/>
+    </genClasses>
+    <genClasses ecoreClass="questScriptEMF.ecore#//Requirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Requirement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute questScriptEMF.ecore#//Requirement/minLevel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference questScriptEMF.ecore#//Requirement/completed"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

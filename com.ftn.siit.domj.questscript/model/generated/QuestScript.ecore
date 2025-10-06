@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="questScript" nsURI="http://www.ftn.com/siit/domj/QuestScript"
+    nsPrefix="questScript">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" upperBound="-1"
+        eType="#//Location" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="npc" upperBound="-1" eType="#//NPC"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" upperBound="-1" eType="#//Item"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="task" upperBound="-1" eType="#//Task"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reward" upperBound="-1"
+        eType="#//Reward" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" upperBound="-1"
+        eType="#//Requirement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quest" upperBound="-1"
+        eType="#//Quest" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="QuestType">
+    <eLiterals name="SIDE_QUEST" literal="SIDE_QUEST"/>
+    <eLiterals name="MAIN_STORY" value="1" literal="MAIN_STORY"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="QuestStatus">
+    <eLiterals name="NEW" literal="NEW"/>
+    <eLiterals name="ACTIVE" value="1" literal="ACTIVE"/>
+    <eLiterals name="FINISHED" value="2" literal="FINISHED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RewardType">
+    <eLiterals name="MONEY" literal="MONEY"/>
+    <eLiterals name="ITEM" value="1" literal="ITEM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ItemType">
+    <eLiterals name="WEAPON" literal="WEAPON"/>
+    <eLiterals name="POTION" value="1" literal="POTION"/>
+    <eLiterals name="KEY_ITEM" value="2" literal="KEY_ITEM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NPC">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Location"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dialog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Item">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ItemType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="find" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defeat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="talkTo" eType="#//NPC"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reward">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RewardType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" eType="#//Item"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moneyAmount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="completed" eType="#//Quest"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Quest">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//QuestType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="giver" eType="#//NPC"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="task" eType="#//Task"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reward" eType="#//Reward"/>
+  </eClassifiers>
+</ecore:EPackage>
