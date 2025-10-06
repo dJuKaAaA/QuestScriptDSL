@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.ftn.siit.domj.questscript
+Bundle-ManifestVersion: 2
+Bundle-Name: com.ftn.siit.domj.questscript
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.ftn.siit.domj.questscript; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: com.ftn.siit.domj.scoping,
+ com.ftn.siit.domj.validation,
+ com.ftn.siit.domj.generator,
+ com.ftn.siit.domj.serializer,
+ com.ftn.siit.domj.questScript,
+ com.ftn.siit.domj.questScript.util,
+ com.ftn.siit.domj.parser.antlr,
+ com.ftn.siit.domj,
+ com.ftn.siit.domj.parser.antlr.internal,
+ com.ftn.siit.domj.questScript.impl,
+ com.ftn.siit.domj.services
+Import-Package: org.apache.log4j

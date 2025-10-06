@@ -1,0 +1,60 @@
+grammar com.ftn.siit.domj.QuestScript with org.eclipse.xtext.common.Terminals
+
+generate questScript "http://www.ftn.com/siit/domj/QuestScript"
+
+Model:
+	location += Location*
+	npc += NPC*
+	item += Item*
+	task += Task*
+	reward += Reward*
+	requirement += Requirement*
+	quest += Quest*
+;
+
+enum QuestType:
+    SIDE_QUEST | MAIN_STORY
+;
+
+enum QuestStatus:
+    NEW | ACTIVE | FINISHED
+;
+
+enum RewardType:
+    MONEY | ITEM
+;
+
+enum ItemType:
+    WEAPON | POTION | KEY_ITEM
+;
+
+Location:
+	'Location' name=STRING x=INT y=INT
+;
+
+NPC:
+	'NPC' name=STRING location=[Location|STRING] dialog=STRING
+;
+
+Item:
+	'Item' name=STRING type=ItemType description=STRING
+;
+
+
+Task:
+	'Task' name=STRING ('find' find=STRING)? ('defeat' defeat=STRING)? ('collect' collect=STRING)? ('talk' 'to' talkTo=[NPC|STRING])?
+;
+
+Reward:
+	'Reward' name=STRING xp=INT type=RewardType ('item' item=[Item|STRING])? ('money' 'amount' moneyAmount=INT)?
+;
+
+Requirement:
+	'Requirement' name=STRING minLevel=INT ('completed' completed=[Quest|STRING])?
+;
+
+Quest:
+	'Quest' name=STRING type=QuestType giver=[NPC|STRING] description=STRING task=[Task|STRING] requirement=[Requirement|STRING] reward=[Reward|STRING]
+;
+
+

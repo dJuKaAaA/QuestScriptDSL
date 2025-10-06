@@ -1,0 +1,21 @@
+Location "Village" 10 20
+Location "Castle" 100 50
+Location "Forest" 500 500
+
+NPC "Guard" "Village" "Halt! Who goes there?"
+NPC "King" "Castle" "Welcome, hero."
+
+Item "Sword" WEAPON "A sharp blade."
+Item "Potion" POTION "Heals 50 HP."
+
+Task "FindSword" find "Sword"
+Task "TalkToKing" talk to "King"
+
+Reward "SwordReward" 100 ITEM item "Sword"
+Reward "PotionReward" 100 MONEY money amount 100
+
+Requirement "StartQuest" 1
+Requirement "FinishSwordQuest" 1 completed "SaveVillage"
+
+Quest "SaveVillage" MAIN_STORY "Guard" "Help the village." "FindSword" "StartQuest" "SwordReward"
+Quest "MeetKing" SIDE_QUEST "Guard" "Talk to the king." "TalkToKing" "FinishSwordQuest" "PotionReward"

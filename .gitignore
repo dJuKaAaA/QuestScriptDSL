@@ -1,0 +1,44 @@
+# Eclipse specific files
+.metadata/
+*.log
+*.tmp
+*.bak
+*.swp
+*.settings/
+.project
+.classpath
+
+# Xtext/EMF generated code
+src-gen/
+xtend-gen/
+*.emf
+*.ecore
+*.genmodel
+
+# Build output
+bin/
+target/
+build/
+out/
+
+# Java specific
+*.class
+*.jar
+*.war
+*.ear
+
+# Gradle/Maven
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+*.iml
+/.idea/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+
+# Optional: user-specific files
+*.launch
