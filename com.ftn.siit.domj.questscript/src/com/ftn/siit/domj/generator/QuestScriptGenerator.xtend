@@ -36,8 +36,6 @@ class QuestScriptGenerator extends AbstractGenerator {
 		}
 	}
 
-	/** Generates complete JSON manually */
-	// TODO: Format the values properly
 	def generateJson(Model model) {
 	    '{\n' +
 	    '\t"locations": [\n' + model.location.map[toJson(it)].join(",\n") + '\n\t],\n' +
